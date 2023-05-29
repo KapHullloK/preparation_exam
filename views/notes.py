@@ -16,7 +16,6 @@ class NotesView(Resource):
     def get(self):
         notes = note_service.get_all()
         return notes_schema.dump(notes), 200
-
     def post(self):
         data = request.json
         note_service.create(data)
